@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-07-01T20:23:08Z"
+  labels:
+    app: webserver
+  name: webserver
+  namespace: anargyroi
+  resourceVersion: "61490"
+  uid: d75f4b50-99b2-4f62-908a-48353efba873
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.105.35.207
+  clusterIPs:
+  - 10.105.35.207
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: webserver
+  sessionAffinity: None
+  type: LoadBalancer
+  allocateLoadBalancerNodePorts: false
+status:
+  loadBalancer: {}
